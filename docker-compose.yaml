@@ -18,7 +18,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_DB: bugs
-      POSTGRES_USER: postgres
+      POSTGRES_USER: bugs
       POSTGRES_PASSWORD: bugs
     volumes:
       - bugzilla-db-data:/var/lib/postgresql/data

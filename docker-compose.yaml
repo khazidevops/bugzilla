@@ -14,6 +14,7 @@ services:
   
   postgresql:
     image: postgres:latest
+    container_name: my_postgres_container  # Specify the permanent name here
     ports:
       - "5432:5432"
     environment:

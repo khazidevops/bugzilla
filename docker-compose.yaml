@@ -22,7 +22,6 @@ services:
       POSTGRES_PASSWORD: bugs
     volumes:
       - bugzilla-db-data:/var/lib/postgresql/data
-      - ./D:/repo/Bugzilla:/docker-entrypoint-initdb.d  # Mounting the local directory to the container
     hostname: bugzilla-db
     networks:
       - bugzilla-network

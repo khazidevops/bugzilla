@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #### docker-compose.yaml
 
 ```yaml
@@ -42,3 +43,6 @@ services:
 Waiting for bugzilla container healthy
 
 http://localhost/bugzilla
+=======
+# bugzilla
+>>>>>>> d9b991726b18c3aee94fdf42f298f1fc24cc9eea

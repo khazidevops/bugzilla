@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  bugzilla:
+    image: khazinasru/bugzilla:v1.3
+    ports:
+      - "80:80"
+    environment:
+      - BUGZILLA_ADMIN_EMAIL=admin@example.com
+      - BUGZILLA_ADMIN_NAME=Administrator
+      - BUGZILLA_ADMIN_PASS=123456789
+    networks:
+      - bugzilla-network
+  
+  postgresql:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: bugs
+      POSTGRES_USER: bugs
+      POSTGRES_PASSWORD: bugs
+    volumes:
+      - bugzilla-db-data:/var/lib/postgresql/data
+      - ./D:/repo/Bugzilla:/docker-entrypoint-initdb.d  # Mounting the local directory to the container
+    hostname: bugzilla-db
+    networks:
+      - bugzilla-network
+
+volumes:
+  bugzilla-db-data:
+
+networks:
+  bugzilla-network:
